@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+nav{
+    background:rgba(0,0,0,0.6);
+    width: 100%;
+    height: 50px;
+    position: fixed;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 50px;
+    float: right;
+    margin-right: 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    line-height: 50px;
+    display: inline-block;
+    height: inherit;
+    color: #f9f6f6;
+}
+.logo1{
+    float: left;
+    margin-left: 20px;
+    letter-spacing: 3px;
+}
+
+#banner{
+    background: rgba(0,0,0,0.03);
+    height: 600px;
+}
+
+.center2{
+    text-align: center;
+    position: relative;
+    top: 60px;
+}
+
+button{
+    margin: 5px;
+    border: none;
+    width: 120px;
+    background: rgba(0,0,0,0.6);
+    color: #faf8f8;
+    border-radius:5px;
+    cursor: pointer;/*鼠标触及变小手*/
+}
+button a{
+    text-decoration: none;
+    line-height: 50px;
+    display: inline-block;
+    height: inherit;
+    color: #f9f6f6;
+}
+
+footer{
+    background-color: darkgray;
+}
+
+.footer_p{
+    text-align: center;
+    color: ghostwhite;
+    font-family: "Adobe 宋体 Std L";
+    font-size: 12px;
+}
+
+.article_p{
+    text-align: center;
+}
+.article_p div{
+    background-color: darkgray;
+    position: relative;
+}
+
+.article_p_one{
+    font-family:"微软雅黑";
+    font-size: 14px;
+}
+.article_p_two{
+    color: bisque;
+    font-family: "Adobe 宋体 Std L";
+    font-size: 10px;
+
+}
+
+.card{
+    float: left;
+    position: relative;
+    /*left: 40px;*/
+    width: 50%;
+    min-height: 300px;
+    /*max-width: 400px;*/
+    padding: 50px;
+    box-sizing: border-box;
+    border: 1px solid white;
+}
+
+.card:first-child{
+    background: rgba(0,0,0,0.01);
+}
+.card:nth-child(2){
+    background: rgba(0,0,0,0.05);
+}
+.card:nth-child(3){
+    background: rgba(0,0,0,0.09);
+}
+.card:nth-child(4){
+    background: rgba(0,0,0,0.13);
+}
+
+.input1{
+    background-color: darkorange;
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.text{
+
+
+}
+

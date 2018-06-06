@@ -1,0 +1,101 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MYblog</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="{% static 'js/About_Me.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/aboutme.css' %}">
+</head>
+
+<body>
+
+<header>
+    <!--设置导航栏-->
+    <nav>
+        <ul>
+            <li class="logo1"><a href="#">Welcome To My Blog!</a></li>
+{#          <li><a href={% url 'blog:about_me' %}>关于我</a> </li>#}
+
+            <li><label><input class="button1" value="关于我" type="button" onclick="OpenDiv('MyDiv','page')"></label></li>
+        </ul>
+    </nav>
+
+   <!--设置图片-->
+    <div id="banner">
+        <img src="{% static 'images/ppp.jpg' %}" style="width: 100%;height: 600px">
+    </div>
+
+    <!--设置个人信息版面-->
+    <div id="page" class="black_overlay"></div>
+    <div id="MyDiv" class="white_content">
+        <div style="text-align: right;cursor: default;height: 40px;">
+            <span style="font-size: 13px; " onclick="CloseDiv('MyDiv','page')">关闭</span>
+        </div>
+        <p>我是一大三在校生，即将迎来大四，也将开始自己的找实习的生活，希望通过自己的努力，
+            找到一份比较满意的实习，为将来自己的毕业找工作打下坚实的基础</p>
+    </div>
+
+</header>
+
+<article class="article_p">
+
+    <section>
+    <div>
+        <h2>生活随笔</h2>
+        {% for article in articles %}
+            <br>
+            <p>{{ article.title }}</p>
+
+            <div style="width: 400px; height: auto; word-break:break-all; word-wrap:break-word; margin: 0 auto">
+            <p style="font-size: 13px;">{{ article.content }}</p>
+            </div>
+
+            <p class="article_p_two">{{ article.time.date }}</p>
+            <br>
+        {% endfor %}
+    </div>
+
+    <button>
+        <a href="{% url 'blog:add_page' 0 %}">添加新笔记</a>
+    </button>
+
+    <button>
+        <a href="{% url 'blog:showed_page' %}">修改旧笔记</a>
+    </button>
+    </section>
+
+    <section>
+        <div class="card">
+            <h4>Python</h4>
+            <p class="article_p_one">接触Python语言的时候，是大三上学期，从此以后便对Python语言充满了热爱！！
+                从试手了最简单的爬虫和数据的分析与挖掘开始，到最近往Django网页框架方面发展，希望自己在这条路上越走越远</p>
+        </div>
+        <div class="card">
+            <h4>Django</h4>
+            <p class="article_p_one">Django发布于2006年，是一个比较完整的Python网页框架，最近的flask框架也异常火爆，
+                如何利用好这两个框架，对自己利用好Python进行后台开发，有很大的助力。</p>
+        </div>
+        <div class="card">
+            <h4>HTML5</h4>
+            <p class="article_p_one">网站的出现，应该说是让互联网信息化有了一次快速性的发展，简单易懂的语法，容易接受的视图，
+                让人们对互联网的多姿多彩样貌有了一份很好的印象。如何学好用好HTML5的知识，自己还得不断地学习 </p>
+        </div>
+        <div class="card">
+            <h4>职业路径</h4>
+            <p class="article_p_one">在大四上学期找到一份做Python方向的工作，毕业后继续从事Python的开发，
+                主要方向往网页后端和小程序方向发展。</p>
+        </div>
+    </section>
+</article>
+
+<footer>
+
+    <p class="footer_p">Design by 蠢航</p>
+
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改笔记</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li class="logo1"><a href="#">修改笔记</a></li>
+            <li><a href="{% url 'blog:index' %}">返回主页</a> </li>
+        </ul>
+    </nav>
+</header>
+
+
+<div class="center2">
+    <section>
+    <form action="{% url 'blog:edit_action' %}" method="post">
+    {%csrf_token%}
+
+        <input type="hidden" name="article_id" value="{{ article.id |default:'0'}}"/> <!--缺省的写法-->
+
+        <label>文章标题<br>
+        <input type="text" name="title" value="{{ article.title }}"
+               style="height: 20px; width: 350px" minlength="1" autofocus/>
+        </label>
+        <br>
+        <br>
+        <label>文章内容<br>
+        <input type="text" name="content" value="{{ article.content }}"
+                  style="height: 400px; width: 350px">
+        </input>
+        </label>
+        <br>
+        <br>
+
+        <input type="submit" value="修改" class="input1" >
+    </form>
+    </section>
+</div>
+
+</body>
+</html>
